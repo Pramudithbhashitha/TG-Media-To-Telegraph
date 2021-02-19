@@ -29,7 +29,6 @@
       "plan": "mongolab:shared-single-small",
       "as": "MONGO"
     },
-    {
       "plan": "heroku-postgresql",
       "options": {
         "version": "9.5"
