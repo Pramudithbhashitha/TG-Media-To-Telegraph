@@ -1,14 +1,18 @@
 {
-  "name": "Filter Bot",
-  "description": "Telegram's sassiest group filter. Modular Telegram group filter bot!",
+  "name": "Small Sharp Tool",
+  "description": "This app does one little thing, and does it well.",
   "keywords": [
-    "telegram",
-    "best",
-    "group",
-    "manager",
-    "3"
+    "productivity",
+    "HTML5",
+    "scalpel"
   ],
-  "repository": "https://github.com/NO-ONE-KN0WS-ME/Filterbot",
+  "website": "https://small-sharp-tool.com/",
+  "repository": "https://github.com/jane-doe/small-sharp-tool",
+  "logo": "https://small-sharp-tool.com/logo.svg",
+  "success_url": "/welcome",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  },
   "env": {
      "BOT_TOKEN": {
       "description": "Your Bot token from @Botfather",
@@ -22,12 +26,26 @@
       "description": "Your API_HASH from https://my.telegram.org/apps",
       "value": ""
     }
-  },
-  "addons": [
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
+        "version": "9.5"
       }
     }
-} 
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  }
+}
