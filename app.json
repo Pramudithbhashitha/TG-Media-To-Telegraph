@@ -1,9 +1,14 @@
 {
-  "name": "Image upload bot",
-  "description": "A bot to upload telegram images to telegraph",
-  "repository": "https://github.com/No-OnE-Kn0wS-Me/TG-Media-To-Telegraph",
-  "logo": "https://telegra.ph/file/33adaf8d6c398edf81967.jpg",
-  "keywords": ["telegram", "telegraph", "imageuploader","telegram bot"],
+  "name": "Filter Bot",
+  "description": "Telegram's sassiest group filter. Modular Telegram group filter bot!",
+  "keywords": [
+    "telegram",
+    "best",
+    "group",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/NO-ONE-KN0WS-ME/Filterbot",
   "env": {
      "BOT_TOKEN": {
       "description": "Your Bot token from @Botfather",
@@ -17,10 +22,12 @@
       "description": "Your API_HASH from https://my.telegram.org/apps",
       "value": ""
     }
-   },
-   "buildpacks": [
+  },
+  "addons": [
     {
-      "url": "heroku/python"
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
     }
-  ]
-}
+} 
